@@ -8,8 +8,10 @@ echo "Min bitrate (e.g. 1.5M 2M, 10M):"
 read minBitrate
 echo "Max bitrate (e.g. 1.5M 2M, 10M):"
 read maxBitrate
-echo "Output path (it must be another folder and end with '/'.):"
-read outputPath
+read -r -e -p "Input path: " inputPath
+read -r -e -p "Output path (end with '/'.): " outputPath
+
+cd $inputPath
 
 for fileSource in *.$inputFormat
 do
